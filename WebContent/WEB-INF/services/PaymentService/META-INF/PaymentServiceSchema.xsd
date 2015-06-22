@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/PaymentServiceSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.example.org/PaymentServiceSchema">
+    <complexType name="PaymentDetails">
+        <sequence>
+            <element name="customerId" type="int"/>
+            <element name="totalCost" type="double"/>
+            <element name="paymentMethod" type="string"/>
+            <element name="cardNumber" type="string"/>
+            <element name="orderid" type="string"/>
+        </sequence>
+    </complexType>
+    <element name="PaymentDetailInput" type="tns:PaymentDetails"/>
+    <element name="PaymentResponse" type="tns:PaymentInvoice"/>
+    <complexType name="PaymentInvoice">
+        <sequence>
+            <element name="orderId" type="string"/>
+            <element name="paymentStatus" type="boolean"/>
+            <element name="paymentinvoice" type="string"/>
+            <element name="customerid" type="int"/>
+        </sequence>
+    </complexType>
+</schema>
